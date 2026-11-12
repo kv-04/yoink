@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Every colour, font and shadow lives here once, and Tailwind
+ * turns each token into utilities (bg-lime, text-ink, shadow-pop, ...).
+ * Restyling the whole brand = editing this block.
+ */
+@theme {
+  --color-ink: #0e0e10;
+  --color-cream: #f6f3ec;
+  --color-lime: #d4ff3a;
+  --color-violet: #6c4bff;
+
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-pop-sm: 2px 2px 0 0 var(--color-ink);
+  --shadow-pop: 4px 4px 0 0 var(--color-ink);
+  --shadow-pop-lg: 7px 7px 0 0 var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Visible keyboard focus everywhere (accessibility). */
+:focus-visible {
+  outline: 3px solid var(--color-violet);
+  outline-offset: 2px;
+}
